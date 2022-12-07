@@ -20,7 +20,8 @@ for iteracao in range(50):
                                 randint(1000, 9999), funcionarios))
 
 caixa_de_texto("Bem-vinde ao Banco Budang")
-
+print("Os números das contas variam entre 0 e 49.\n"
+      "A senha (acesso cliente) é um PIN de 4 dígitos gerado aleatoriamente e revelada em caso de erro (modo dev).")
 opt = int(input("\n1 - User\n2 - Admin\n3 - Funcionário\nSelecione um dos modos de operação (1,2 ou 3): "))
 
 if opt == 1:

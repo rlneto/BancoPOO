@@ -58,7 +58,7 @@ def user(clientes):
 
 
 if __name__ == "__main__":
-    print("Executando interface de usuário...\n")
+    print("Executando terminal de usuário...\n")
 
     with open("nomes.txt", 'r') as arquivo:
         nomes = [nome.strip() for nome in arquivo]

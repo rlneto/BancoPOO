@@ -23,7 +23,7 @@ def menu(cadastro, conta):
 
 def proletario(funcionarios):
     print("Login:\n")
-    conta = int(input("Bem-vindo ao banco que lhe remunera muitíssimo bem.\nInforme seu código de funcionário: "))
+    conta = int(input("Bem-vinde ao banco que te remunera muitíssimo bem!\nInforme seu código de funcionário: "))
     if conta >= len(funcionarios):
         print("Código inválido. Tente novamente.")
         proletario(funcionarios)
@@ -32,7 +32,7 @@ def proletario(funcionarios):
 
 
 if __name__ == "__main__":
-    print("Executando interface de funcionário...\n")
+    print("Executando terminal de funcionário...\n")
 
     with open("nomes.txt", 'r') as arquivo:
         nomes = [nome.strip() for nome in arquivo]

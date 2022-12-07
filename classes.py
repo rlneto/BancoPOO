@@ -167,6 +167,7 @@ class Funcionario(Pessoa):
         if valor < self.saldo:
             self.saldo -= valor
             print(f"Saque de {valor} R$ realizado com sucesso.")
+            print(self)
         else:
             print("Operação não realizada, saldo insuficiente.")
 

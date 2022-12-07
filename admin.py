@@ -6,7 +6,8 @@ def menu(cadastro, funcionarios):
     opt = int(input(f"\nMenu de admin\nSelecione uma das opções do menu.\n1 - Alterar saldo cliente\n"
                     f"2 - Pagar proletário\n3 - Listar clientes\n4 - Listar proletários\n5 - Listar operações do cliente"
                     f"\n6 - Cadastrar cliente\n7 - Cadastrar proletário\n8 - Alterar senha de cliente\n"
-                    f"9 - Excluir cliente\n0 - Demitir proletário\nSelecione uma das opções: "))
+                    f"9 - Excluir cliente\n10 - Demitir proletário\n11 - Buscar cliente\n0 - Sair\n"
+                    f"Selecione uma das opções: "))
     if opt == 1:
         cadastro[int(input("Informe o valor da conta a alterar: "))].saldo = \
             (float(input("Informe o novo saldo em R$: ")))
@@ -47,8 +48,17 @@ def menu(cadastro, funcionarios):
     elif opt == 9:
         cadastro[int(input("Informe o número da conta a ser excluída: "))] = None
         menu(cadastro, funcionarios)
-    elif opt == 0:
+    elif opt == 10:
         funcionarios[int(input("Informe o número da conta a ser excluída: "))] = None
+        menu(cadastro, funcionarios)
+    elif opt == 11:
+        termo = str(input("Informe o nome do titular para iniciar a busca: "))
+        for cliente in cadastro:
+            if termo in cliente:
+                print(f"Cliente encontrado! O código do cliente é: {cadastro.index(cliente)}")
+            else:
+                continue
+        print("Busca encerrada.")
         menu(cadastro, funcionarios)
     else:
         print("Encerrando o programa...")
@@ -60,7 +70,7 @@ def admin(clientes, funcionarios):
 
 
 if __name__ == "__main__":
-    print("Executando interface de admin...\n")
+    print("Executando terminal de admin...\n")
 
     with open("nomes.txt", 'r') as arquivo:
         nomes = [nome.strip() for nome in arquivo]
