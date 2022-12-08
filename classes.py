@@ -8,6 +8,8 @@ class Pessoa:
         self._nome = nome.title()
         self._cpf = cpf
 
+    def saque(self, valor):
+        pass
     @property
     def nome(self):
         return self._nome
