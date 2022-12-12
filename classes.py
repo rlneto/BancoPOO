@@ -116,7 +116,7 @@ class Cliente(Pessoa, Container):
                 cadastro[destino].deposito(valor, self._conta)
                 if len(self._transacoes) > 11:
                     self._transacoes.pop(0)
-                self._transacoes.append(Transacao(self._conta, destino, 2, -valor))
+                self._transacoes.append(Transacao(2, -valor, self._conta, destino))
                 print(self._transacoes[-1])
             else:
                 print("Operação cancelada: Saldo insuficiente.")
