@@ -75,12 +75,12 @@ if __name__ == "__main__":
     with open("nomes.txt", 'r', encoding='utf-8') as arquivo:
         nomes = [nome.strip() for nome in arquivo]
 
-    clientes, funcionarios = [], []
+    cadastro, funcionarios = [], []
 
     for iteracao in range(50):
-        clientes.append(Cliente(nomes[randint(0, len(nomes)) - 1], randint(100000000000, 999999999999), clientes,
+        cadastro.append(Cliente(nomes[randint(0, len(nomes)) - 1], randint(100000000000, 999999999999), cadastro,
                                 randint(1000, 9999)))
         funcionarios.append(Funcionario(nomes[randint(0, len(nomes)) - 1], randint(100000000000, 999999999999), "cargo",
                                         randint(1000, 9999), funcionarios))
 
-    admin(clientes, funcionarios)
+    admin(cadastro, funcionarios)
