@@ -34,7 +34,7 @@ def proletario(funcionarios):
 if __name__ == "__main__":
     print("Executando terminal de funcionário...\n")
 
-    with open("nomes.txt", 'r') as arquivo:
+    with open("nomes.txt", 'r', encoding='utf-8') as arquivo:
         nomes = [nome.strip() for nome in arquivo]
 
     funcionarios = []
